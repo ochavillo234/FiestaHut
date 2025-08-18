@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Fiesta Hut</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("zOI5FHeBSVJFKZp3i"); // 🔑 Replace with your EmailJS public key
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gradient-to-br from-yellow-100 via-yellow-50 to-white min-h-screen flex flex-col items-center py-10">
+
+<!-- Header -->
+<div class="text-center mb-8 px-3">
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-yellow-700 drop-shadow">
+    🛒 Fiesta Hut Cart
+  </h1>
+  <p class="text-xs sm:text-sm text-gray-600 mt-1">
+    Review your items before checkout
+  </p>
+</div>
+
+<!-- Cart Items -->
+<div id="cart-items" 
+  class="w-full max-w-xs sm:max-w-md md:max-w-lg 
+         bg-white/90 backdrop-blur-lg shadow-lg 
+         rounded-lg sm:rounded-xl p-4 sm:p-6 
+         border border-yellow-200 mx-auto">
+</div>
+
+<!-- Checkout Form -->
+<form id="checkoutForm" 
+  class="w-full max-w-xs sm:max-w-md md:max-w-lg 
+         bg-white/95 shadow-xl 
+         rounded-lg sm:rounded-xl p-4 sm:p-6 mt-6 sm:mt-8 
+         space-y-4 sm:space-y-5 border border-yellow-200 mx-auto">
+
+  <h2 class="text-lg sm:text-xl font-bold text-gray-800 border-b pb-2">👤 Customer Information</h2>
+
+  <input type="text" id="name" name="name" placeholder="Full Name" required
+    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+  <input type="text" id="contact" name="contact" placeholder="+63 900-000-0000" required
+    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+  <input type="email" id="email" name="email" placeholder="Email Address" required
+    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+  <!-- Payment Method -->
+  <div>
+    <label class="font-medium text-gray-700">💳 Payment Method</label>
+    <select id="paymentMethod" 
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 mt-1 sm:mt-2 focus:ring-2 focus:ring-yellow-400" required>
+      <option value="">-- Select Payment Method --</option>
+      <option value="cod">Cash on Delivery</option>
+      <option value="online">Pay Online</option>
+    </select>
+  </div>
+
+  <!-- Online Payment Section -->
+  <div id="onlinePaymentSection" 
+    class="hidden space-y-2 sm:space-y-3 bg-yellow-50 border-2 border-dashed border-yellow-300 rounded-lg sm:rounded-xl p-3 sm:p-5">
+    
+    <p class="text-xs sm:text-sm font-semibold text-gray-700">
+      Send your payment to: <br>
+      <span class="block text-gray-900 font-bold">
+        📲 GCash: 09323956447 <br>
+        <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
+      </span>
+      <span class="block mt-2 text-gray-900 font-bold">
+        💳 PayMaya: 09173747475 <br>
+        <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
+      </span>
+    </p>
+
+    <select id="paymentApp" 
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400">
+      <option value="">-- Select App --</option>
+      <option value="gcash">GCash</option>
+      <option value="paymaya">PayMaya</option>
+    </select>
+
+    <input type="text" id="referenceNumber" placeholder="Reference Number"
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit"
+    class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base sm:text-lg font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+    Place Order
+  </button>
+</form>
+
+<!-- Back to Menu -->
+<a href="index.html#menu" 
+   class="mt-4 sm:mt-6 inline-block bg-gray-200 text-gray-700 text-sm sm:text-base font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow hover:bg-gray-300 hover:scale-105 transition">
+  Back to Menu
+</a>
+
+
+<script>
+
+    // ✅ Auto-format contact number as +63 900-000-0000
+document.getElementById("contact").addEventListener("input", function(e) {
+  let value = e.target.value.replace(/\D/g, ""); // remove non-digits
+
+  // Ensure it always starts with "63" (Philippines code)
+  if (!value.startsWith("63")) {
+    value = "63" + value;
+  }
+
+  // Limit to 12 digits (63 + 10-digit number)
+  value = value.substring(0, 12);
+
+  // Format into +63 900-000-0000
+  let formatted = "+";
+  if (value.length > 0) formatted += value.substring(0, 2);        // 63
+  if (value.length > 2) formatted += " " + value.substring(2, 5); // 900
+  if (value.length > 5) formatted += "-" + value.substring(5, 8); // 000
+  if (value.length > 8) formatted += "-" + value.substring(8, 12);// 0000
+
+  e.target.value = formatted;
+});
+
+  // ✅ Save items into cart
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price: Number(price), quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  // ✅ Load and display cart (with quantity edit + remove)
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContainer = document.getElementById("cart-items");
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p class='text-gray-600'>Your cart is empty.</p>";
+      document.getElementById("checkoutForm").classList.add("hidden");
+      return;
+    }
+
+    let total = 0;
+    cartContainer.innerHTML = `
+      <ul class="divide-y divide-gray-200">
+        ${cart.map((item, index) => {
+          total += Number(item.price) * Number(item.quantity);
+          return `
+            <li class="py-3 flex justify-between items-center">
+              <div>
+                <span class="font-medium">${item.name}</span>
+                <span class="ml-2 text-gray-500">₱${item.price}</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button onclick="updateQuantity(${index}, -1)" class="bg-gray-300 px-2 rounded">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="updateQuantity(${index}, 1)" class="bg-gray-300 px-2 rounded">+</button>
+                <button onclick="removeFromCart(${index})"
+                  class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 transition">
+                  Remove
+                </button>
+              </div>
+            </li>
+          `;
+        }).join("")}
+      </ul>
+      <div class="mt-4 text-right font-bold text-lg text-gray-800">
+        Total: ₱${total}
+      </div>
+    `;
+  }
+
+  // ✅ Update quantity
+  function updateQuantity(index, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart[index].quantity += change;
+
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  // ✅ Remove item
+  function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  // ✅ Show/Hide Online Payment Section
+  document.getElementById("paymentMethod").addEventListener("change", function() {
+    let section = document.getElementById("onlinePaymentSection");
+    if (this.value === "online") {
+      section.classList.remove("hidden");
+    } else {
+      section.classList.add("hidden");
+    }
+  });
+
+// ✅ Handle form submission with SweetAlert confirmation
+document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  if (cart.length === 0) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Your cart is empty!',
+      text: 'Please add items before placing an order.',
+      confirmButtonColor: '#facc15'
+    });
+    return;
+  }
+
+  let orderDetails = cart.map(item => 
+    `${item.name} x${item.quantity} - ₱${item.price * item.quantity}`
+  ).join("\n");
+
+  let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+  let paymentMethod = document.getElementById("paymentMethod").value;
+  let paymentInfo = "";
+
+  if (paymentMethod === "online") {
+    let app = document.getElementById("paymentApp").value;
+    let ref = document.getElementById("referenceNumber").value;
+    paymentInfo = `Payment Method: Online\nApp: ${app}\nReference: ${ref}\nNumbers: 09323956447 / 09173747475`;
+  } else {
+    paymentInfo = "Payment Method: Cash on Delivery";
+  }
+
+  let formData = {
+    name: document.getElementById("name").value,
+    contact: document.getElementById("contact").value,
+    email: document.getElementById("email").value,
+    order_message: `${orderDetails}\n\nTotal: ₱${total}\n\n${paymentInfo}`
+  };
+
+  // ✅ Confirmation popup
+  Swal.fire({
+    title: 'Confirm Order',
+    html: `<p class="text-gray-700">Do you want to place this order?</p>
+           <p class="mt-2 font-semibold text-yellow-600">Total: ₱${total}</p>`,
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, Place Order',
+    cancelButtonText: 'No, Cancel',
+    confirmButtonColor: '#facc15',
+    cancelButtonColor: '#9ca3af'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // ✅ Send via EmailJS
+      emailjs.send("service_15p6mfs", "template_7zoprjb", formData)
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Order Placed!',
+          text: 'Your order has been sent successfully. Redirecting to Lalamove...',
+          confirmButtonColor: '#facc15',
+          timer: 2500,
+          timerProgressBar: true,
+          showConfirmButton: false
+        }).then(() => {
+          localStorage.removeItem("cart");
+          window.location.href = "https://web.lalamove.com/";
+        });
+      })
+      .catch(err => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Failed to send order',
+          text: 'There was an error sending your order. Please try again.',
+          confirmButtonColor: '#ef4444'
+        });
+        console.error("❌ Failed to send order", err);
+      });
+    }
+  });
+});
+
+  // ✅ Run on page load
+  window.onload = loadCart;
+</script>
+
+</body>
+</html>

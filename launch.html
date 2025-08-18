@@ -1,0 +1,596 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lunch Menu - Fiesta Hut</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="bg-yellow-50">
+
+<!-- Header -->
+<header class="relative bg-gradient-to-r from-yellow-600 via-white to-yellow-600 py-10 md:py-14 shadow-lg text-center overflow-hidden">
+
+  <!-- Decorative Background Pattern -->
+  <div class="absolute inset-0 opacity-20 pointer-events-none" 
+       style="background-image: radial-gradient(circle at 20% 30%, rgba(255,223,120,0.4) 0%, transparent 40%), 
+              radial-gradient(circle at 80% 70%, rgba(255,223,120,0.4) 0%, transparent 40%);
+              background-size: cover;">
+  </div>
+
+  <!-- Content Wrapper -->
+  <div class="relative z-10">
+    
+    <!-- Title -->
+    <h1 class="text-[24px] sm:text-[32px] md:text-[44px] font-extrabold text-gray-900 tracking-tight drop-shadow-sm">
+      🍽️ Our Lunch Menu
+    </h1>
+    
+    <!-- Subtitle -->
+    <p class="text-gray-700 text-sm sm:text-base md:text-xl mt-2 max-w-2xl mx-auto leading-relaxed">
+      Delicious meals to <span class="text-yellow-700 font-semibold">power your afternoon</span>
+    </p>
+    
+    <!-- Buttons Container -->
+    <div class="flex justify-center gap-3 mt-6">
+      <a href="index.html#menu" 
+         class="bg-yellow-500 text-white font-medium py-2 px-5 sm:py-3 sm:px-8 md:px-10 rounded-full shadow-md hover:bg-yellow-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out text-sm sm:text-base md:text-lg">
+        Back to Menu
+      </a>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Filter Buttons -->
+  <div class="max-w-[1200px] mx-auto px-4 mt-8 flex flex-wrap justify-center gap-6">
+    <button onclick="filterMenu('all')" class="triangle-btn red pb-4"><span>All</span></button>
+    <button onclick="filterMenu('pork')" class="triangle-btn green pb-4"><span>Pork</span></button>
+    <button onclick="filterMenu('chicken')" class="triangle-btn blue pb-4"><span>Chicken</span></button>
+    <button onclick="filterMenu('veggies')" class="triangle-btn orange pb-4"><span>Veggies</span></button>
+    <button onclick="filterMenu('beef')" class="triangle-btn yellow pb-4"><span>Beef</span></button>
+    <button onclick="filterMenu('seafood')" class="triangle-btn green pb-4"><span>Sea Food</span></button>
+  </div>
+
+  <!-- Menu Grid -->
+  <section id="menu-grid" class="max-w-[1200px] mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+<!-- Chicken Adobo -->
+<div data-category="chicken" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/ChickenAdobo2.jpg" alt="Chicken Adobo" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Chicken Adobo
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Tender chicken slow-cooked in soy sauce, vinegar, and spices.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Chicken Adobo', 120)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bicol Express -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/BicolExpress2.jpg" alt="Bicol Express" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Bicol Express
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Spicy pork stew with coconut milk, chilies, and shrimp paste.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱130</p>
+      <button onclick="addToCart('Bicol Express', 130)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Ginisang Togue -->
+<div data-category="veggies" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/GinisangTogue2.jpg" alt="Ginisang Togue" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Ginisang Togue
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Fresh bean sprouts sautéed with garlic, onions, and carrots.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱80</p>
+      <button onclick="addToCart('Ginisang Togue', 80)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Pork Humba -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Humba2.jpg" alt="Pork Humba" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Pork Humba
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Sweet and savory braised pork belly with pineapple and spices.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱140</p>
+      <button onclick="addToCart('Pork Humba', 140)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Menudo -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Menudo2.jpg" alt="Menudo" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Menudo</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">Pork stew with potatoes, carrots, and bell peppers in tomato sauce.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Menudo', 120)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">🛒</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pinakbet -->
+<div data-category="veggies" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Pinakbet2.jpg" alt="Pinakbet" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Pinakbet</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">Mix of local vegetables sautéed with shrimp paste.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱90</p>
+      <button onclick="addToCart('Pinakbet', 90)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">🛒</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pork Sinigang -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Sinigang1.jpg" alt="Pork Sinigang" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Pork Sinigang</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">Tangy pork soup with tamarind broth and fresh vegetables.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱130</p>
+      <button onclick="addToCart('Pork Sinigang', 130)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">🛒</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pork Tapang Taal -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Tapangtaal2.jpg" alt="Pork Tapang Taal" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Pork Tapang Taal</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">Marinated pork slices, pan-fried and served with garlic rice.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱140</p>
+      <button onclick="addToCart('Pork Tapang Taal', 140)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">🛒</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Beef Papaitan -->
+<div data-category="beef" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Papaitan.jpg" alt="Beef Papaitan" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Beef Papaitan
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A traditional Ilocano soup made from beef innards with a bitter, savory broth flavored with bile, garlic, and ginger.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Beef Papaitan', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Pritong Galunggong -->
+<div data-category="seafood" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Galunggong2.jpg" alt="Pritong Galunggong" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Pritong Galunggong
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A classic Filipino favorite of crispy fried round scad served hot, perfect with rice and vinegar dip.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Pritong Galunggong', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Pork Adobo -->
+<div data-category="pork" 
+     class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Porkadobo.jpg" alt="Pork Adobo" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Pork Adobo
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Tender pork chunks simmered in soy sauce, vinegar, garlic, and spices for a rich, savory flavor.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Pork Adobo', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Chopsuey -->
+<div data-category="veggies" class="menu-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:scale-105">
+  <img src="pictures/Chapsuy.jpg" alt="Chopsuey" class="w-full h-36 object-cover">
+  <div class="p-2.5">
+    <h3 class="text-base font-bold text-gray-800">Chopsuey</h3>
+    <p class="text-gray-600 text-[11px] mt-1">A colorful stir-fry of mixed vegetables with meat or seafood in a light, savory sauce.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-yellow-600 font-semibold text-sm">₱150</p>
+      <button onclick="addToCart('Chopsuey', 150)" 
+              class="bg-yellow-500 text-black font-semibold px-2.5 py-1.5 rounded-full shadow hover:bg-yellow-600 transition text-xs">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Adobong Sitaw -->
+<div data-category="veggies" class="menu-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:scale-105">
+  <img src="pictures/Adobongsitaw.jpg" alt="Adobong Sitaw" class="w-full h-36 object-cover">
+  <div class="p-2.5">
+    <h3 class="text-base font-bold text-gray-800">Adobong Sitaw</h3>
+    <p class="text-gray-600 text-[11px] mt-1">String beans cooked in a savory blend of soy sauce, vinegar, and garlic, sometimes with pork or shrimp.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-yellow-600 font-semibold text-sm">₱150</p>
+      <button onclick="addToCart('Adobong Sitaw', 150)" 
+              class="bg-yellow-500 text-black font-semibold px-2.5 py-1.5 rounded-full shadow hover:bg-yellow-600 transition text-xs">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Chicken Tinola -->
+<div data-category="chicken" class="menu-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:scale-105">
+  <img src="pictures/Chicken Tinola.jpg" alt="Chicken Tinola" class="w-full h-36 object-cover">
+  <div class="p-2.5">
+    <h3 class="text-base font-bold text-gray-800">Chicken Tinola</h3>
+    <p class="text-gray-600 text-[11px] mt-1">A comforting ginger-based chicken soup with green papaya and chili leaves.</p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-yellow-600 font-semibold text-sm">₱150</p>
+      <button onclick="addToCart('Chicken Tinola', 150)" 
+              class="bg-yellow-500 text-black font-semibold px-2.5 py-1.5 rounded-full shadow hover:bg-yellow-600 transition text-xs">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Black MayaMaya Sinigang sa Miso -->
+<div data-category="seafood" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Sinigangmaya.jpg" alt="Black MayaMaya Sinigang sa Miso" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Black MayaMaya Sinigang sa Miso
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Tangy tamarind-based soup with black snapper and miso for a rich, savory twist.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Black MayaMaya Sinigang sa Miso', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Adobong Pusit -->
+<div data-category="seafood" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Adobongpusit.jpg" alt="Adobong Pusit" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Adobong Pusit
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Squid simmered in vinegar, soy sauce, garlic, and its own ink for a bold, savory flavor.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Adobong Pusit', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Kilawing Kabasi -->
+<div data-category="seafood" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="pictures/Kinilaw.jpg" alt="Kilawing Kabasi" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Kilawing Kabasi
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A Filipino ceviche made with fresh fish marinated in vinegar, onions, and chili for a zesty flavor.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱150</p>
+      <button onclick="addToCart('Kilawing Kabasi', 150)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+  </section>
+
+  <!-- JavaScript for Filtering -->
+  <script>
+  function filterMenu(category) {
+    const items = document.querySelectorAll('.menu-item');
+    items.forEach(item => {
+      if (category === 'all' || item.dataset.category === category) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+  </script>
+
+  <style>
+.triangle-btn {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  user-select: none;
+  background:
+    linear-gradient(135deg, rgba(255 255 255 / 0.15) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255 255 255 / 0.15) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255 255 255 / 0.15) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255 255 255 / 0.15) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    background-position 0.4s ease;
+  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  transform: translateY(-6px);
+  font-size: 16px;
+}
+
+.triangle-btn::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 120px;
+  height: 60px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background-color: rgba(0,0,0,0.15);
+  z-index: -1;
+  filter: blur(2px);
+  transition: top 0.3s ease, left 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+}
+
+.triangle-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 23px;
+  left: 30%;
+  width: 40%;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  opacity: 0.4;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/* Color Variants */
+.red { background-color: #dc2626; border-color: #b91c1c; }
+.green { background-color: #15803d; border-color: #166534; }
+.blue { background-color: #1d4ed8; border-color: #1e40af; }
+.orange { background-color: #ea580c; border-color: #c2410c; }
+.yellow { background-color: #ca8a04; border-color: #854d0e; }
+
+/* Hover Effects */
+.triangle-btn:hover {
+  color: inherit;
+  background-position: 5px 5px, 5px 15px, 15px -5px, -5px 5px;
+}
+
+.triangle-btn:hover::before {
+  top: 3px;
+  left: 3px;
+  background-color: rgba(0,0,0,0.3);
+  filter: blur(4px);
+}
+
+.triangle-btn:hover::after {
+  width: 60%;
+  opacity: 0.7;
+}
+
+/* ✅ Responsive: smaller on phones */
+@media (max-width: 600px) {
+  .triangle-btn {
+    width: 60px;
+    height: 40px;
+    font-size: 8px;
+  }
+
+  .triangle-btn::before {
+    width: 75px;
+    height: 38px;
+    top: 3px;
+    left: 3px;
+  }
+
+  .triangle-btn::after {
+    bottom: 15px;
+    height: 2px;
+  }
+}
+
+    /* Per-color hover variations */
+    .red:hover { background-color: #ef4444; color: white; }
+    .green:hover { background-color: #22c55e; color: white; }
+    .blue:hover { background-color: #3b82f6; color: white; }
+    .orange:hover { background-color: #f97316; color: white; }
+    .yellow:hover { background-color: #eab308; color: white; }
+
+    /* Click Pop Animation */
+    @keyframes popEffect {
+      0%   { transform: scale(1) translateY(-6px); }
+      50%  { transform: scale(1.15) translateY(-10px); }
+      100% { transform: scale(1) translateY(-6px); }
+    }
+    .triangle-btn:active {
+      animation: popEffect 0.2s ease;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.triangle-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const rect = btn.getBoundingClientRect();
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+        const btnColor = window.getComputedStyle(btn).backgroundColor;
+
+        confetti({
+          particleCount: 100,
+          spread: 500,
+          origin: { x: x, y: y },
+          colors: [btnColor, '#FFF700', '#F4C430', '#FFDA03']
+        });
+      });
+    });
+  });
+  </script>
+
+  <script>
+  function addToCart(itemName, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ✅ Check if item already exists
+    let existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+      existingItem.quantity += 1; // increase quantity
+    } else {
+      cart.push({ name: itemName, price: price, quantity: 1 });
+    }
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+// ✅ SweetAlert2 Center Popup (Fiesta Hut Design)
+Swal.fire({
+  title: 'Item Added!',
+  html: `<p class="text-gray-700">
+           <b class="text-yellow-600">${itemName}</b> has been added to your cart.
+         </p>`,
+  icon: 'success',
+  confirmButtonText: 'Continue Shopping',
+  confirmButtonColor: '#facc15', // Fiesta Yellow
+  customClass: {
+    popup: 'rounded-2xl shadow-2xl border border-yellow-200 bg-white/95',
+    title: 'text-2xl font-extrabold text-yellow-600',
+    htmlContainer: 'text-base text-gray-700',
+    confirmButton: 'px-6 py-2 rounded-lg font-semibold'
+  },
+  background: '#fffef8'
+});
+  }
+</script>
+
+  </body>
+  </html>

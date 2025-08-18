@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breakfast Menu - Fiesta Hut</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-yellow-50">
+
+<!-- Header -->
+<header class="relative bg-gradient-to-r from-yellow-600 via-white to-yellow-600 py-10 md:py-14 shadow-lg text-center overflow-hidden">
+
+  <!-- Decorative Background Pattern -->
+  <div class="absolute inset-0 opacity-20 pointer-events-none" 
+       style="background-image: radial-gradient(circle at 20% 30%, rgba(255,223,120,0.4) 0%, transparent 40%), 
+              radial-gradient(circle at 80% 70%, rgba(255,223,120,0.4) 0%, transparent 40%);
+              background-size: cover;">
+  </div>
+
+  <!-- Content Wrapper -->
+  <div class="relative z-10">
+    
+    <!-- Title -->
+    <h1 class="text-[24px] sm:text-[32px] md:text-[44px] font-extrabold text-gray-900 tracking-tight drop-shadow-sm">
+      🍳 Our Silog Meals Menu
+    </h1>
+    
+    <!-- Subtitle -->
+    <p class="text-gray-700 text-sm sm:text-base md:text-xl mt-2 max-w-2xl mx-auto leading-relaxed">
+      Savor the <span class="text-yellow-600 font-semibold">Best Silog Varieties</span> Made Just for You
+    </p>
+    
+    <!-- Buttons Container -->
+    <div class="flex justify-center gap-3 mt-6">
+      <!-- Back to Menu Button -->
+      <a href="index.html#menu" 
+         class="bg-yellow-500 text-white font-medium py-2 px-5 sm:py-3 sm:px-8 md:px-10 rounded-full shadow-md hover:bg-yellow-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out text-sm sm:text-base md:text-lg">
+        Back to Menu
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Menu Grid -->
+<section class="max-w-[1200px] mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+<!-- Menu Item 1 -->
+<div class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/OverloadLongsilog.jpg" alt="Overload Longsilog" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Overload Longsilog
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A hearty plate loaded with longganisa, garlic rice, and egg.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Overload Longsilog', 120)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Item 2 -->
+<div class="group bg-white rounded-md sm:rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Hamonado.jpg" alt="Longsilog Hamonado" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Longsilog (Hamonado)
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Sweet-style longganisa paired with garlic rice and egg.
+    </p>
+    <div class="mt-2 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Longsilog Hamonado', 120)" 
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Menu Item 3 -->
+<div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/SmokeHamonado.jpg" alt="Longsilog Smoke Hamonado" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Longsilog (Smoke Hamonado)
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Smoky-sweet longganisa with rice and sunny-side egg.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Longsilog (Smoke Hamonado)', 120)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Item 4 -->
+<div class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Garlicky.jpg" alt="Longsilog Garlicky" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Longsilog (Garlicky)
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Extra garlicky longganisa for bold flavor lovers.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
+      <button onclick="addToCart('Longsilog (Garlicky)', 120)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>  
+</div>
+
+
+<!-- Menu Item 5 -->
+<div class="group bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/FiestaHutBlend.jpg" alt="Longsilog Fiesta Hut Blend" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Longsilog (Fiesta Hut Blend)
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Signature house-blend longganisa with garlic rice & egg.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱130</p>
+      <button onclick="addToCart('Longsilog (Fiesta Hut Blend)', 130)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Item 6 -->
+<div class="group bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="./pictures/Sarsilog.jpg" alt="Sarsilog" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Sarsilog
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Savory sausage, garlic rice, and a perfectly fried egg.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
+      <button onclick="addToCart('Sarsilog', 110)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Menu Item 7 -->
+<div class="group bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="hakdog.jpg" alt="Hotsilog" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Hotsilog
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Crispy hotdog served with garlic rice and egg.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱90</p>
+      <button onclick="addToCart('Hotsilog', 90)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Item 8 -->
+<div class="group bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
+  <img src="chicks.jpg" alt="Chicksilog" 
+       class="h-[160px] sm:h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
+  <div class="p-3 sm:p-5 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Chicksilog
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Crispy chicken with garlic rice and egg.
+    </p>
+    <div class="mt-2 sm:mt-3 flex items-center justify-between">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱140</p>
+      <button onclick="addToCart('Chicksilog', 140)" 
+              class="bg-yellow-500 text-black font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow hover:bg-yellow-600 transition">
+        🛒
+      </button>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<script>
+  function addToCart(itemName, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ✅ Check if item already exists
+    let existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+      existingItem.quantity += 1; // increase quantity
+    } else {
+      cart.push({ name: itemName, price: price, quantity: 1 });
+    }
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+// ✅ SweetAlert2 Center Popup (Fiesta Hut Design)
+Swal.fire({
+  title: 'Item Added!',
+  html: `<p class="text-gray-700">
+           <b class="text-yellow-600">${itemName}</b> has been added to your cart.
+         </p>`,
+  icon: 'success',
+  confirmButtonText: 'Continue Shopping',
+  confirmButtonColor: '#facc15', // Fiesta Yellow
+  customClass: {
+    popup: 'rounded-2xl shadow-2xl border border-yellow-200 bg-white/95',
+    title: 'text-2xl font-extrabold text-yellow-600',
+    htmlContainer: 'text-base text-gray-700',
+    confirmButton: 'px-6 py-2 rounded-lg font-semibold'
+  },
+  background: '#fffef8'
+});
+
+
+
+  }
+</script>
+
+
+</body>
+</html>
