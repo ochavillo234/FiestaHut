@@ -23,7 +23,7 @@
     }
   </script>
 
-<body class="bg-white text-gray-800 font-sans">
+<body class="relative bg-gradient-to-b from-yellow-50 via-white to-yellow-100 font-sans">
 
 <!-- Smooth scrolling for anchor links -->
 <style>html { scroll-behavior: smooth; }</style>
@@ -128,11 +128,11 @@
 </script>
 
 
-<section id="home" class="relative scroll-mt-[150px] px-6 pb-32 mt-20 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
+<section id="home" class="relative scroll-mt-[200px] px-6 pb-32 pt-16 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
 
   <!-- Decorative Floating Shapes -->
   <div class="absolute top-0 left-0 w-[200px] h-[200px] bg-yellow-200 rounded-full blur-3xl opacity-40 animate-pulse"></div>
-  <div class="absolute bottom-[-100px] right-0 w-[250px] h-[250px] bg-yellow-300 rounded-full blur-3xl opacity-40 animate-pulse delay-2000"></div>
+  <div class="absolute bottom-[-100px] right-0 w-[250px] h-[250px] pb-15 rounded-full blur-3xl opacity-40 animate-pulse delay-2000"></div>
 
   <div class="w-full flex flex-col md:flex-row items-center justify-start gap-10 relative z-10 px-6 md:px-12">
     
@@ -155,48 +155,53 @@
       </a>
     </div>
 
-    <!-- Right: Carousel Animation -->
-    <div class="relative w-[260px] h-[340px] sm:w-[300px] sm:h-[400px] md:w-[380px] md:h-[480px] 
-                mt-20 md:mt-0 flex-shrink-0 md:ml-[60px] 
-                shadow-[0_0_20px_4px_rgba(250,204,21,0.6)] 
-                rounded-2xl bg-white/60 backdrop-blur-lg border border-yellow-100">
+<!-- Right: Carousel Animation -->
+<div class="relative w-[260px] h-[340px] 
+            sm:w-[300px] sm:h-[400px] 
+            md:w-[350px] md:h-[480px]   <!-- smaller on PC -->
+            mt-20 md:mt-5 flex-shrink-0 md:ml-[60px] 
+            shadow-[0_0_18px_3px_rgba(250,204,21,0.6)] 
+            rounded-2xl bg-white/60 backdrop-blur-lg border border-yellow-100">
 
-      <!-- Orbit ring -->
-      <div id="orbit" class="absolute inset-10 z-20"></div>
+  <!-- Orbit ring -->
+  <div id="orbit" class="absolute inset-8 z-20"></div>
 
-      <!-- Center image -->
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-        <img id="center-image"
-             src=""
-             class="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] 
-                    object-cover rounded-full shadow-2xl border-4 border-white ring-4 ring-yellow-200 
-                    transition duration-300 hover:scale-105">
-      </div>
+  <!-- Center image -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+    <img id="center-image"
+         src=""
+         class="w-[140px] h-[140px]      <!-- phone -->
+                sm:w-[180px] sm:h-[180px] 
+                md:w-[170px] md:h-[170px] <!-- smaller on PC -->
+                object-cover rounded-full shadow-2xl border-4 border-white ring-4 ring-yellow-200 
+                transition duration-300 hover:scale-105">
+  </div>
 
-      <!-- Left Arrow -->
-      <button id="prevBtn"
-              class="absolute left-[-45px] sm:left-[-60px] md:left-[-80px] top-1/2 -translate-y-1/2 
-                     bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] 
-                     rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
-        <span class="text-lg sm:text-xl md:text-2xl font-bold text-yellow-700">&larr;</span>
-      </button>
+  <!-- Left Arrow -->
+  <button id="prevBtn"
+          class="absolute left-[-45px] sm:left-[-60px] md:left-[-70px] top-1/2 -translate-y-1/2 
+                 bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
+                 rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
+    <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&larr;</span>
+  </button>
 
-      <!-- Right Arrow -->
-      <button id="nextBtn"
-              class="absolute right-[-45px] sm:right-[-60px] md:right-[-80px] top-1/2 -translate-y-1/2 
-                     bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] 
-                     rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
-        <span class="text-lg sm:text-xl md:text-2xl font-bold text-yellow-700">&rarr;</span>
-      </button>
+  <!-- Right Arrow -->
+  <button id="nextBtn"
+          class="absolute right-[-45px] sm:right-[-60px] md:right-[-70px] top-1/2 -translate-y-1/2 
+                 bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
+                 rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
+    <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&rarr;</span>
+  </button>
 
-      <!-- Dish name -->
-      <p id="center-name"
-         class="absolute bottom-[-100px] sm:bottom-[-80px] md:bottom-[-100px] left-1/2 -translate-x-1/2 
-                text-yellow-900 font-bold text-base sm:text-lg md:text-2xl 
-                text-center z-10 drop-shadow whitespace-nowrap truncate max-w-[90%]">
-      </p>
+  <!-- Dish name -->
+  <p id="center-name"
+     class="absolute bottom-[-105px] sm:bottom-[-80px] md:bottom-[-80px] 
+            left-1/2 -translate-x-1/2 
+            text-yellow-900 font-bold text-lg sm:text-lg md:text-2xl 
+            text-center z-10 drop-shadow whitespace-nowrap truncate max-w-[90%]">
+  </p>
+</div>
 
-    </div>
   </div>
 </section>
 
@@ -204,9 +209,9 @@
 </section>
 
 <!-- Menu Section -->
-<section id="menu" class="relative scroll-mt-[100px] px-6 py-30 pb-20 mt-20 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
+<section id="menu" class="relative scroll-mt-[80px] px-6 pb-20">
   <!-- Title -->
-<h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mb-4 text-gray-900 tracking-tight leading-snug">
+<h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center pt-10 mb-4 text-gray-900 tracking-tight leading-snug">
   Explore Our Full Fiesta Menu
 </h2>
 
@@ -261,11 +266,11 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="relative scroll-mt-[100px] px-6 py-30 pb-20 mt-20 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
+<section id="about" class="relative scroll-mt-[80px] px-6 pb-20 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
   <div class="max-w-6xl mx-auto">
     
     <!-- Title -->
-    <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center text-gray-900 mb-6 mt-6 tracking-tight">
+    <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center text-gray-900 pt-10 tracking-tight">
       About Us
     </h2>
     <p class="text-sm sm:text-base md:text-xl text-gray-600 text-center max-w-4xl mx-auto mb-16 leading-relaxed">
@@ -306,9 +311,9 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="relative scroll-mt-[100px] max-w-[1200px] mx-auto px-6 py-30 mt-20">
+<section id="contact" class="relative scroll-mt-[80px] max-w-[1200px] mx-auto px-6 py-30">
   <!-- Title -->
-  <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mb-4 text-gray-900 tracking-tight">
+  <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center pt-10 mb-4 text-gray-900 tracking-tight">
     Contact Us
   </h2>
   <p class="text-sm sm:text-base md:text-lg text-center text-gray-600 mb-14 max-w-xl mx-auto leading-relaxed">
@@ -437,42 +442,46 @@
   
   <h4 class="text-gray-900 font-extrabold text-lg sm:text-2xl mb-6 text-center">
     💳 MODES OF PAYMENT
-  </h4>
-  
-  <!-- Payment Icons -->
-  <div class="flex justify-center gap-4 sm:gap-8 flex-wrap mb-6">
-    <!-- GCash -->
-    <div class="flex flex-col items-center">
-      <img onclick="showModal('gcashModal')" 
-           src="pictures/cashg.jpg" 
-           alt="Gcash" 
-           class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
-      <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">Gcash</span>
-    </div>
+</h4>
 
-    <!-- PayMaya -->
-    <div class="flex flex-col items-center">
-      <img onclick="showModal('paymayaModal')" 
-           src="pictures/mamamo.jpg" 
-           alt="PayMaya" 
-           class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
-      <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">PayMaya</span>
-    </div>
-
-    <!-- UnionBank -->
-    <div class="flex flex-col items-center">
-      <img src="pictures/UBITCH.jpg" alt="UnionBank" 
-           class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md">
-      <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">UnionBank</span>
-    </div>
-
-    <!-- BDO -->
-    <div class="flex flex-col items-center">
-      <img src="pictures/bdotite.png" alt="BDO" 
-           class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md">
-      <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">BDO</span>
-    </div>
+<!-- Payment Icons -->
+<div class="flex justify-center gap-4 sm:gap-8 flex-wrap mb-6">
+  <!-- GCash -->
+  <div class="flex flex-col items-center">
+    <img onclick="showModal('gcashModal')" 
+         src="pictures/cashg.jpg" 
+         alt="Gcash" 
+         class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
+    <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">Gcash</span>
   </div>
+
+  <!-- PayMaya -->
+  <div class="flex flex-col items-center">
+    <img onclick="showModal('paymayaModal')" 
+         src="pictures/mamamo.jpg" 
+         alt="PayMaya" 
+         class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
+    <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">PayMaya</span>
+  </div>
+
+  <!-- UnionBank -->
+  <div class="flex flex-col items-center">
+    <img onclick="showModal('unionbankModal')"
+         src="pictures/UBITCH.jpg" 
+         alt="UnionBank" 
+         class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
+    <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">UnionBank</span>
+  </div>
+
+  <!-- BDO -->
+  <div class="flex flex-col items-center">
+    <img onclick="showModal('bdoModal')"
+         src="pictures/bdotite.png" 
+         alt="BDO" 
+         class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-yellow-400 shadow-md cursor-pointer">
+    <span class="mt-2 text-xs sm:text-sm font-medium text-gray-700">BDO</span>
+  </div>
+</div>
 
 <!-- GCash Modal -->
 <div id="gcashModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
@@ -522,6 +531,54 @@
   </div>
 </div>
 
+<!-- UnionBank Modal -->
+<div id="unionbankModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="relative bg-gradient-to-b from-yellow-200 to-black/80 backdrop-blur-md 
+              rounded-xl sm:rounded-2xl 
+              p-4 sm:p-8 
+              w-[300px] sm:w-[380px] 
+              shadow-xl sm:shadow-2xl 
+              text-center border border-white/20 animate-fadeIn">
+    
+    <button onclick="closeModal('unionbankModal')" class="absolute top-2 right-2 sm:top-3 sm:right-3 
+            text-white bg-red-500 rounded-full w-7 h-7 sm:w-8 sm:h-8 
+            flex items-center justify-center hover:bg-red-600 transition">✕</button>
+    
+    <img src="pictures/UBITCH.jpg" alt="UnionBank" 
+         class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-4 border-4 border-yellow-400 shadow-lg">
+    
+    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2 text-yellow-400 drop-shadow-md">UnionBank</h2>
+    <p class="text-gray-200 text-base sm:text-lg">Account Name</p>
+    <p class="text-lg sm:text-xl font-semibold text-yellow-300 mb-2">Fiesta Hut Interprise</p>
+    <p class="text-gray-200 text-base sm:text-lg">Checking Account</p>
+    <p class="text-lg sm:text-xl font-semibold text-yellow-300">00-268-001143-6</p>
+  </div>
+</div>
+
+<!-- BDO Modal -->
+<div id="bdoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="relative bg-gradient-to-b from-yellow-200 to-black/80 backdrop-blur-md 
+              rounded-xl sm:rounded-2xl 
+              p-4 sm:p-8 
+              w-[300px] sm:w-[380px] 
+              shadow-xl sm:shadow-2xl 
+              text-center border border-white/20 animate-fadeIn">
+    
+    <button onclick="closeModal('bdoModal')" class="absolute top-2 right-2 sm:top-3 sm:right-3 
+            text-white bg-red-500 rounded-full w-7 h-7 sm:w-8 sm:h-8 
+            flex items-center justify-center hover:bg-red-600 transition">✕</button>
+    
+    <img src="pictures/bdotite.png" alt="BDO" 
+         class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-4 border-4 border-yellow-400 shadow-lg">
+    
+    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2 text-yellow-400 drop-shadow-md">BDO</h2>
+    <p class="text-gray-200 text-base sm:text-lg">Account Name</p>
+    <p class="text-lg sm:text-xl font-semibold text-yellow-300 mb-2">Marivic D. Sigue</p>
+    <p class="text-gray-200 text-base sm:text-lg">Savings Account</p>
+    <p class="text-lg sm:text-xl font-semibold text-yellow-300">001010096662</p>
+  </div>
+</div>
+
 <style>
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
@@ -539,6 +596,7 @@ function showModal(id) {
 function closeModal(id) {
   document.getElementById(id).classList.add("hidden");
 }
+
 </script>
 
 
@@ -620,7 +678,7 @@ function closeModal(id) {
 
 
 <!-- Footer -->
-<footer class="bg-gradient-to-r from-yellow-900 via-yellow-800 to-yellow-900 text-white py-4 mt-20 shadow-inner">
+<footer class="bg-gradient-to-r from-yellow-900 via-yellow-800 to-yellow-900 text-white py-4 mt-10 shadow-inner">
   <div class="max-w-[1700px] mx-auto px-4 sm:px-6 text-center space-y-3">
 
     <!-- Logo + Brand -->
@@ -674,8 +732,8 @@ function closeModal(id) {
     const radius = 180;
     const angleStep = (2 * Math.PI) / images.length;
 
-    const centerX = orbit.offsetWidth / 2;
-    const centerY = orbit.offsetHeight / 2;
+    const centerX = orbit.offsetWidth / 1.80;
+    const centerY = orbit.offsetHeight / 1.85;
 
     images.forEach((imgData, i) => {
       const angle = angleStep * i - Math.PI / 2;
