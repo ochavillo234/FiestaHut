@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -23,7 +23,7 @@
     }
   </script>
 
-<body class="relative bg-gradient-to-b from-yellow-50 via-white to-yellow-100 font-sans">
+<body class="bg-gradient-to-b from-yellow-50 via-white to-yellow-100 font-sans">
 
 <!-- Smooth scrolling for anchor links -->
 <style>html { scroll-behavior: smooth; }</style>
@@ -155,61 +155,59 @@
       </a>
     </div>
 
-<!-- Right: Carousel Animation -->
-<div class="relative w-[260px] h-[340px] 
-            sm:w-[300px] sm:h-[400px] 
-            md:w-[350px] md:h-[480px]   <!-- smaller on PC -->
-            mt-20 md:mt-5 flex-shrink-0 md:ml-[60px] 
-            shadow-[0_0_18px_3px_rgba(250,204,21,0.6)] 
-            rounded-2xl bg-white/60 backdrop-blur-lg border border-yellow-100">
+      <!-- Right: Carousel Animation -->
+      <div class="relative w-[260px] h-[340px] 
+                  sm:w-[300px] sm:h-[400px] 
+                  md:w-[350px] md:h-[480px]   <!-- smaller on PC -->
+                  mt-20 md:mt-5 flex-shrink-0 md:ml-[60px] 
+                  shadow-[0_0_18px_3px_rgba(250,204,21,0.6)] 
+                  rounded-2xl bg-white/60 backdrop-blur-lg border border-yellow-100">
 
-  <!-- Orbit ring -->
-  <div id="orbit" class="absolute inset-8 z-20"></div>
+        <!-- Orbit ring -->
+        <div id="orbit" class="absolute inset-8 z-20"></div>
 
-  <!-- Center image -->
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-    <img id="center-image"
-         src=""
-         class="w-[140px] h-[140px]      <!-- phone -->
-                sm:w-[180px] sm:h-[180px] 
-                md:w-[170px] md:h-[170px] <!-- smaller on PC -->
-                object-cover rounded-full shadow-2xl border-4 border-white ring-4 ring-yellow-200 
-                transition duration-300 hover:scale-105">
-  </div>
+        <!-- Center image -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+          <img id="center-image"
+              src=""
+              class="w-[140px] h-[140px]      <!-- phone -->
+                      sm:w-[180px] sm:h-[180px] 
+                      md:w-[170px] md:h-[170px] <!-- smaller on PC -->
+                      object-cover rounded-full shadow-2xl border-4 border-white ring-4 ring-yellow-200 
+                      transition duration-300 hover:scale-105">
+        </div>
 
-  <!-- Left Arrow -->
-  <button id="prevBtn"
-          class="absolute left-[-45px] sm:left-[-60px] md:left-[-70px] top-1/2 -translate-y-1/2 
-                 bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
-                 rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
-    <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&larr;</span>
-  </button>
+        <!-- Left Arrow -->
+        <button id="prevBtn"
+                class="absolute left-[-45px] sm:left-[-60px] md:left-[-70px] top-1/2 -translate-y-1/2 
+                      bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
+                      rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
+          <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&larr;</span>
+        </button>
 
-  <!-- Right Arrow -->
-  <button id="nextBtn"
-          class="absolute right-[-45px] sm:right-[-60px] md:right-[-70px] top-1/2 -translate-y-1/2 
-                 bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
-                 rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
-    <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&rarr;</span>
-  </button>
+        <!-- Right Arrow -->
+        <button id="nextBtn"
+                class="absolute right-[-45px] sm:right-[-60px] md:right-[-70px] top-1/2 -translate-y-1/2 
+                      bg-white w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] 
+                      rounded-full flex items-center justify-center shadow-md hover:bg-yellow-100 transition duration-200 z-30">
+          <span class="text-lg sm:text-xl md:text-xl font-bold text-yellow-700">&rarr;</span>
+        </button>
 
-  <!-- Dish name -->
-  <p id="center-name"
-     class="absolute bottom-[-105px] sm:bottom-[-80px] md:bottom-[-80px] 
-            left-1/2 -translate-x-1/2 
-            text-yellow-900 font-bold text-lg sm:text-lg md:text-2xl 
-            text-center z-10 drop-shadow whitespace-nowrap truncate max-w-[90%]">
-  </p>
-</div>
+        <!-- Dish name -->
+        <p id="center-name"
+          class="absolute bottom-[-105px] sm:bottom-[-80px] md:bottom-[-80px] 
+                  left-1/2 -translate-x-1/2 
+                  text-yellow-900 font-bold text-lg sm:text-lg md:text-2xl 
+                  text-center z-10 drop-shadow whitespace-nowrap truncate max-w-[90%]">
+        </p>
+      </div>
 
-  </div>
-</section>
-
+    </div>
   </div>
 </section>
 
 <!-- Menu Section -->
-<section id="menu" class="relative scroll-mt-[80px] px-6 pb-20">
+<section id="menu" class="relative scroll-mt-[80px] px-6 pb-10">
   <!-- Title -->
 <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center pt-10 mb-4 text-gray-900 tracking-tight leading-snug">
   Explore Our Full Fiesta Menu
@@ -266,7 +264,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="relative scroll-mt-[80px] px-6 pb-20 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
+<section id="about" class="relative scroll-mt-[80px] px-6 pb-10 bg-gradient-to-b from-yellow-50 via-white to-yellow-100">
   <div class="max-w-6xl mx-auto">
     
     <!-- Title -->
@@ -729,11 +727,32 @@ function closeModal(id) {
 
   function renderOrbit() {
     orbit.innerHTML = '';
-    const radius = 180;
+    // Responsive orbit radius
+    let radius;
+    if (window.innerWidth < 640) {
+      radius = 130;  // 📱 phones
+    } else if (window.innerWidth < 768) {
+      radius = 150;  // 📲 tablets
+    } else {
+      radius = 180;  // 💻 desktops
+    }
+
     const angleStep = (2 * Math.PI) / images.length;
 
-    const centerX = orbit.offsetWidth / 1.80;
-    const centerY = orbit.offsetHeight / 1.85;
+    let centerX, centerY;
+    if (window.innerWidth < 640) {
+      // 📱 phone
+      centerX = orbit.offsetWidth / 1.55;
+      centerY = orbit.offsetHeight / 1.65;
+    } else if (window.innerWidth < 768) {
+      // 📲 tablet
+      centerX = orbit.offsetWidth / 1.9;
+      centerY = orbit.offsetHeight / 1.9;
+    } else {
+      // 💻 desktop
+      centerX = orbit.offsetWidth / 1.80;
+      centerY = orbit.offsetHeight / 1.85;
+    }
 
     images.forEach((imgData, i) => {
       const angle = angleStep * i - Math.PI / 2;
@@ -742,7 +761,13 @@ function closeModal(id) {
 
       const img = document.createElement('img');
       img.src = imgData.src;
-      img.className = 'orbit-item w-[100px] h-[100px] object-cover rounded-full border-4 border-white absolute';
+      img.className = `
+        orbit-item 
+        w-[80px] h-[80px]       /* 📱 small (default mobile) */
+        sm:w-[90px] sm:h-[90px] /* 📲 tablets */
+        md:w-[110px] md:h-[110px] /* 💻 desktop */
+        object-cover rounded-full border-4 border-white absolute
+      `;
       img.style.left = `${x}px`;
       img.style.top = `${y}px`;
       img.style.boxShadow = '0 0 15px 4px rgba(250, 204, 21, 0.7)';  // Yellow glow shadow
