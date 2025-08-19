@@ -25,82 +25,88 @@
   </p>
 </div>
 
-<!-- Cart Items -->
-<div id="cart-items" 
-  class="w-full max-w-xs sm:max-w-md md:max-w-lg 
-         bg-white/90 backdrop-blur-lg shadow-lg 
-         rounded-lg sm:rounded-xl p-4 sm:p-6 
-         border border-yellow-200 mx-auto">
+<!-- Flex Container -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+
+  <!-- Cart Items (Show First on Mobile) -->
+  <div id="cart-items" 
+    class="order-1 md:order-2 flex-1 bg-white/90 backdrop-blur-lg shadow-lg 
+           rounded-lg sm:rounded-xl p-4 sm:p-6 
+           border border-yellow-200">
+  </div>
+
+  <!-- Checkout Form (Show Below on Mobile) -->
+  <form id="checkoutForm" 
+    class="order-2 md:order-1 flex-1 bg-white/95 shadow-xl 
+           rounded-lg sm:rounded-xl p-4 sm:p-6 
+           space-y-4 sm:space-y-5 border border-yellow-200">
+
+    <h2 class="text-lg sm:text-xl font-bold text-gray-800 border-b pb-2">👤 Customer Information</h2>
+
+    <input type="text" id="name" name="name" placeholder="Full Name" required
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+    <input type="text" id="contact" name="contact" placeholder="+63 900-000-0000" required
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+    <input type="email" id="email" name="email" placeholder="Email Address" required
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+
+    <!-- Payment Method -->
+    <div>
+      <label class="font-medium text-gray-700">💳 Payment Method</label>
+      <select id="paymentMethod" 
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 mt-1 sm:mt-2 focus:ring-2 focus:ring-yellow-400" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="online">Pay Online</option>
+      </select>
+    </div>
+
+    <!-- Online Payment Section -->
+    <div id="onlinePaymentSection" 
+      class="hidden space-y-2 sm:space-y-3 bg-yellow-50 border-2 border-dashed border-yellow-300 rounded-lg sm:rounded-xl p-3 sm:p-5">
+      
+      <p class="text-xs sm:text-sm font-semibold text-gray-700">
+        Send your payment to: <br>
+        <span class="block text-gray-900 font-bold">
+          📲 GCash: 09323956447 <br>
+          <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
+        </span>
+        <span class="block mt-2 text-gray-900 font-bold">
+          💳 PayMaya: 09173747475 <br>
+          <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
+        </span>
+      </p>
+
+      <select id="paymentApp" 
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400">
+        <option value="">-- Select App --</option>
+        <option value="gcash">GCash</option>
+        <option value="paymaya">PayMaya</option>
+        <option value="unionBank">UnionBank</option>
+        <option value="BDO">BDO</option>
+      </select>
+
+      <input type="text" id="referenceNumber" placeholder="Reference Number"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit"
+      class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base sm:text-lg font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+      Place Order
+    </button>
+  </form>
+</div>
 </div>
 
-<!-- Checkout Form -->
-<form id="checkoutForm" 
-  class="w-full max-w-xs sm:max-w-md md:max-w-lg 
-         bg-white/95 shadow-xl 
-         rounded-lg sm:rounded-xl p-4 sm:p-6 mt-6 sm:mt-8 
-         space-y-4 sm:space-y-5 border border-yellow-200 mx-auto">
-
-  <h2 class="text-lg sm:text-xl font-bold text-gray-800 border-b pb-2">👤 Customer Information</h2>
-
-  <input type="text" id="name" name="name" placeholder="Full Name" required
-    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
-
-  <input type="text" id="contact" name="contact" placeholder="+63 900-000-0000" required
-    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
-
-  <input type="email" id="email" name="email" placeholder="Email Address" required
-    class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
-
-  <!-- Payment Method -->
-  <div>
-    <label class="font-medium text-gray-700">💳 Payment Method</label>
-    <select id="paymentMethod" 
-      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 mt-1 sm:mt-2 focus:ring-2 focus:ring-yellow-400" required>
-      <option value="">-- Select Payment Method --</option>
-      <option value="cod">Cash on Delivery</option>
-      <option value="online">Pay Online</option>
-    </select>
-  </div>
-
-  <!-- Online Payment Section -->
-  <div id="onlinePaymentSection" 
-    class="hidden space-y-2 sm:space-y-3 bg-yellow-50 border-2 border-dashed border-yellow-300 rounded-lg sm:rounded-xl p-3 sm:p-5">
-    
-    <p class="text-xs sm:text-sm font-semibold text-gray-700">
-      Send your payment to: <br>
-      <span class="block text-gray-900 font-bold">
-        📲 GCash: 09323956447 <br>
-        <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
-      </span>
-      <span class="block mt-2 text-gray-900 font-bold">
-        💳 PayMaya: 09173747475 <br>
-        <span class="text-gray-600 font-medium">Name: Juan Dela Cruz</span>
-      </span>
-    </p>
-
-    <select id="paymentApp" 
-      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400">
-      <option value="">-- Select App --</option>
-      <option value="gcash">GCash</option>
-      <option value="paymaya">PayMaya</option>
-    </select>
-
-    <input type="text" id="referenceNumber" placeholder="Reference Number"
-      class="w-full border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 focus:ring-2 focus:ring-yellow-400"/>
-  </div>
-
-  <!-- Submit -->
-  <button type="submit"
-    class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base sm:text-lg font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-    Place Order
-  </button>
-</form>
-
 <!-- Back to Menu -->
-<a href="index.html#menu" 
-   class="mt-4 sm:mt-6 inline-block bg-gray-200 text-gray-700 text-sm sm:text-base font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow hover:bg-gray-300 hover:scale-105 transition">
-  Back to Menu
-</a>
+<div class="text-center">
+  <a href="index.html#menu" 
+     class="mt-6 inline-block bg-gray-200 text-gray-700 text-sm sm:text-base font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow hover:bg-gray-300 hover:scale-105 transition">
+    Back to Menu
+  </a>
+</div>
 
 
 <script>
@@ -213,6 +219,19 @@ document.getElementById("contact").addEventListener("input", function(e) {
     }
   });
 
+
+  const refInput = document.getElementById("referenceNumber");
+
+  refInput.addEventListener("input", () => {
+    // Remove anything that's not a digit
+    refInput.value = refInput.value.replace(/[^0-9]/g, "");
+
+    // Prevent leading zeros
+    if (refInput.value.startsWith("0")) {
+      refInput.value = refInput.value.replace(/^0+/, "");
+    }
+  });
+
 // ✅ Handle form submission with SweetAlert confirmation
 document.getElementById("checkoutForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -238,8 +257,20 @@ document.getElementById("checkoutForm").addEventListener("submit", function(e) {
   let paymentInfo = "";
 
   if (paymentMethod === "online") {
-    let app = document.getElementById("paymentApp").value;
-    let ref = document.getElementById("referenceNumber").value;
+    let app = document.getElementById("paymentApp").value.trim();
+    let ref = document.getElementById("referenceNumber").value.trim();
+
+    // ✅ Validation for online payments
+    if (app === "" || ref === "") {
+      Swal.fire({
+        icon: 'error',
+        title: 'Missing Payment Details',
+        text: 'Please select a payment app and enter a valid reference number before placing your order.',
+        confirmButtonColor: '#ef4444'
+      });
+      return; // stop order
+    }
+
     paymentInfo = `Payment Method: Online\nApp: ${app}\nReference: ${ref}\nNumbers: 09323956447 / 09173747475`;
   } else {
     paymentInfo = "Payment Method: Cash on Delivery";
@@ -293,7 +324,6 @@ document.getElementById("checkoutForm").addEventListener("submit", function(e) {
     }
   });
 });
-
   // ✅ Run on page load
   window.onload = loadCart;
 </script>
