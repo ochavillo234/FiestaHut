@@ -10,34 +10,44 @@
 <body class="bg-yellow-50">
 
 <!-- Header -->
-<header class="relative bg-gradient-to-r from-yellow-500 via-white to-yellow-500 py-10 shadow-lg flex flex-col items-center text-center overflow-hidden">
-  <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, rgba(255, 210, 90, 0.4) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 210, 90, 0.4) 0%, transparent 40%);"></div>
-  <div class="relative z-10">
-<!-- Drinks Menu Title -->
-<h1 class="flex items-center justify-center gap-2 
-           text-[34px] md:text-[40px] 
-           font-extrabold text-gray-900 drop-shadow-sm tracking-tight">
+<header class="relative bg-gradient-to-r from-yellow-500 via-white to-yellow-500 py-8 sm:py-12 lg:py-16 shadow-lg flex flex-col items-center text-center overflow-hidden">
+  <!-- Decorative Background -->
+  <div class="absolute inset-0 opacity-20 pointer-events-none" 
+       style="background-image: radial-gradient(circle at 20% 30%, rgba(255, 210, 90, 0.4) 0%, transparent 40%),
+                                radial-gradient(circle at 80% 70%, rgba(255, 210, 90, 0.4) 0%, transparent 40%);">
+  </div>
 
-  <!-- Drink SVG Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" 
-       viewBox="0 -960 960 960" 
-       class="w-8 h-8 md:w-10 md:h-10">
-    <path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h560v80h-80v80q0 17-11.5 28.5T680-680H360q-17 0-28.5-11.5T320-720v-80h-80v640h162q-38-27-60-68.5T320-320v-200h400v200q0 50-22 91.5T638-160h162v80H240Zm280-120q50 0 85-35t35-85v-120H400v120q0 50 35 85t85 35Zm0-360q17 0 28.5-11.5T560-600q0-17-11.5-28.5T520-640q-17 0-28.5 11.5T480-600q0 17 11.5 28.5T520-560Zm0 120Z"/>
-  </svg>
+  <!-- Content -->
+  <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl">
+    
+    <!-- Drinks Menu Title -->
+    <h1 class="flex items-center justify-center gap-2 
+               text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
+               font-extrabold text-gray-900 drop-shadow-sm tracking-tight">
 
-  Our Drinks Menu
-</h1>
+      <!-- Drink SVG Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           viewBox="0 -960 960 960" 
+           class="w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 lg:w-12 lg:h-12 flex-shrink-0 fill-black">
+        <path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h560v80h-80v80q0 17-11.5 28.5T680-680H360q-17 0-28.5-11.5T320-720v-80h-80v640h162q-38-27-60-68.5T320-320v-200h400v200q0 50-22 91.5T638-160h162v80H240Zm280-120q50 0 85-35t35-85v-120H400v120q0 50 35 85t85 35Zm0-360q17 0 28.5-11.5T560-600q0-17-11.5-28.5T520-640q-17 0-28.5 11.5T480-600q0 17 11.5 28.5T520-560Zm0 120Z"/>
+      </svg>
 
-    <p class="text-gray-700 text-lg md:text-xl mt-2 mb-5">
+      Our Drinks Menu
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mt-2 mb-5 leading-relaxed">
       Refreshing beverages for <span class="text-yellow-700 font-semibold">every mood</span>
     </p>
+
+    <!-- Button -->
     <a href="index.html#menu" 
-       class="bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-yellow-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+       class="inline-block bg-yellow-500 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 lg:py-4 lg:px-10 rounded-full shadow-md hover:bg-yellow-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
       Back to Menu
     </a>
   </div>
-
 </header>
+
 
 <!-- Confetti Library -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -82,18 +92,26 @@
 </div>
 
 <!-- Menu Grid -->
-<section id="menu-grid" class="max-w-[1200px] mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+<section class="max-w-[1200px] mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
 <!-- Fresh Vanilla -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/frenchh Vanila.jpg" alt="Fresh Vanilla Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Fresh Vanilla</h3>
-    <p class="text-gray-600 text-sm mt-1">Smooth and creamy with a hint of sweet vanilla.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱110</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/frenchh Vanila.jpg" alt="Fresh Vanilla Coffee" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Fresh Vanilla
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Smooth and creamy with a hint of sweet vanilla.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
       <button onclick="addToCart('Fresh Vanilla', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Fresh Vanilla to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -101,15 +119,23 @@
 </div>
 
 <!-- Caramel Coffee -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/Caramel Cofee.jpg" alt="Caramel Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Caramel Coffee</h3>
-    <p class="text-gray-600 text-sm mt-1">Rich coffee balanced with buttery caramel sweetness.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱110</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/Caramel Cofee.jpg" alt="Caramel Coffee" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Caramel Coffee
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Rich coffee balanced with buttery caramel sweetness.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
       <button onclick="addToCart('Caramel Coffee', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Caramel Coffee to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -117,31 +143,48 @@
 </div>
 
 <!-- Pure Sagada Arabica -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/sagada cofee.jpg" alt="Pure Sagada Arabica" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Pure Sagada Arabica</h3>
-    <p class="text-gray-600 text-sm mt-1">Bold and aromatic beans from the highlands of Sagada.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱135</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/sagada cofee.jpg" alt="Pure Sagada Arabica" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Pure Sagada Arabica
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Bold and aromatic beans from the highlands of Sagada.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱135</p>
       <button onclick="addToCart('Pure Sagada Arabica', 135)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Pure Sagada Arabica to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Barakong Kapeng Matapang -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/barakong kape.jpg" alt="Barakong Kapeng Matapang" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Barakong Kapeng Matapang</h3>
-    <p class="text-gray-600 text-sm mt-1">Strong and full-bodied for the true coffee lover.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱120</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/barakong kape.jpg" alt="Barakong Kapeng Matapang" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Barakong Kapeng Matapang
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Strong and full-bodied for the true coffee lover.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Barakong Kapeng Matapang', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Barakong Kapeng Matapang to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -149,15 +192,23 @@
 </div>
 
 <!-- Hazelnut -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/hazelnut coffee.jpg" alt="Hazelnut Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Hazelnut</h3>
-    <p class="text-gray-600 text-sm mt-1">Nutty aroma with a smooth, roasted flavor finish.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱110</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/hazelnut coffee.jpg" alt="Hazelnut Coffee" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Hazelnut
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Nutty aroma with a smooth, roasted flavor finish.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
       <button onclick="addToCart('Hazelnut', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Hazelnut to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -165,15 +216,23 @@
 </div>
 
 <!-- Cafe Mocha -->
-<div data-category="cafe-guia" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/mocha cafe.jpg" alt="Cafe Mocha" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Cafe Mocha</h3>
-    <p class="text-gray-600 text-sm mt-1">A perfect blend of chocolate richness and coffee boldness.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱120</p>
+<div data-category="cafe-guia" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/mocha cafe.jpg" alt="Cafe Mocha" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Cafe Mocha
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A perfect blend of chocolate richness and coffee boldness.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Cafe Mocha', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Cafe Mocha to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -186,15 +245,23 @@
 <!-- ICED COFFEE -->
 
 <!-- Iced Americano -->
-<div data-category="iced-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/iced americano.jpg" alt="Iced Americano" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Iced Americano</h3>
-    <p class="text-gray-600 text-sm mt-1">Bold espresso poured over refreshing ice.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱95</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/iced americano.jpg" alt="Iced Americano" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Iced Americano
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Bold espresso poured over refreshing ice.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱95</p>
       <button onclick="addToCart('Iced Americano', 95)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Iced Americano to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -202,15 +269,23 @@
 </div>
 
 <!-- Spanish Latte -->
-<div data-category="iced-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/spanish latte.jpg" alt="Spanish Latte" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Spanish Latte</h3>
-    <p class="text-gray-600 text-sm mt-1">Sweetened milk coffee with a smooth, creamy finish.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱115</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/spanish latte.jpg" alt="Spanish Latte" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Spanish Latte
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Sweetened milk coffee with a smooth, creamy finish.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱115</p>
       <button onclick="addToCart('Spanish Latte', 115)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Spanish Latte to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -218,15 +293,23 @@
 </div>
 
 <!-- Irish Whiskey -->
-<div data-category="iced-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/irish whiskey.jpg" alt="Irish Whiskey Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Irish Whiskey</h3>
-    <p class="text-gray-600 text-sm mt-1">Espresso infused with rich Irish cream flavor.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱120</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/irish whiskey.jpg" alt="Irish Whiskey Coffee" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Irish Whiskey
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Espresso infused with rich Irish cream flavor.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Irish Whiskey', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Irish Whiskey Coffee to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -234,15 +317,23 @@
 </div>
 
 <!-- Latte -->
-<div data-category="iced-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/latte.jpg" alt="Iced Latte" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Latte</h3>
-    <p class="text-gray-600 text-sm mt-1">Creamy milk blended with smooth espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱110</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/latte.jpg" alt="Iced Latte" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Latte
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Creamy milk blended with smooth espresso.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
       <button onclick="addToCart('Latte', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Latte to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -250,15 +341,23 @@
 </div>
 
 <!-- Cheesecake -->
-<div data-category="iced-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/chesscakes coffee.jpg" alt="Cheesecake Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Cheesecake</h3>
-    <p class="text-gray-600 text-sm mt-1">A sweet fusion of creamy cheesecake and coffee.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱125</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/chesscakes coffee.jpg" alt="Cheesecake Coffee" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Cheesecake
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      A sweet fusion of creamy cheesecake and coffee.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱125</p>
       <button onclick="addToCart('Cheesecake', 125)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Cheesecake Coffee to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -266,15 +365,23 @@
 </div>
 
 <!-- Hazelnut Latte -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/Hazelnut.jpg" alt="Hazelnut Latte" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Hazelnut Latte</h3>
-    <p class="text-gray-600 text-sm mt-2">Nutty hazelnut flavor swirled into iced coffee.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱115</p>
+<div data-category="iced-coffee" 
+     class="menu-item bg-white rounded-md sm:rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+  <img src="Coffees/Hazelnut.jpg" alt="Hazelnut Latte" 
+       class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500"
+       loading="lazy">
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Hazelnut Latte
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Nutty hazelnut flavor swirled into iced coffee.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱115</p>
       <button onclick="addToCart('Hazelnut Latte', 115)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Hazelnut Latte to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -282,15 +389,30 @@
 </div>
 
 <!-- Caramel Macchiato -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/caramel macchiato.jpg" alt="Caramel Macchiato" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Caramel Macchiato</h3>
-    <p class="text-gray-600 text-sm mt-2">Espresso layered with caramel and milk over ice.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱120</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/caramel macchiato.jpg" alt="Caramel Macchiato" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Caramel Macchiato
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Espresso layered with caramel and milk over ice.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Caramel Macchiato', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Caramel Macchiato to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -298,15 +420,30 @@
 </div>
 
 <!-- Dark Mocha -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/dark mocha.jpg" alt="Dark Mocha" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Dark Mocha</h3>
-    <p class="text-gray-600 text-sm mt-2">Rich dark chocolate meets bold espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱125</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/dark mocha.jpg" alt="Dark Mocha" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Dark Mocha
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Rich dark chocolate meets bold espresso.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱125</p>
       <button onclick="addToCart('Dark Mocha', 125)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Dark Mocha to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -314,31 +451,62 @@
 </div>
 
 <!-- Toffee Fudge -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/toffee.jpg" alt="Toffee Fudge" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Toffee Fudge</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet toffee and coffee blended over ice.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱120</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/toffee.jpg" alt="Toffee Fudge" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Toffee Fudge
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Sweet toffee and coffee blended over ice.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Toffee Fudge', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Toffee Fudge to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Butterscotch -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/buttersxhotfhc.jpg" alt="Butterscotch" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Butterscotch</h3>
-    <p class="text-gray-600 text-sm mt-2">Smooth coffee with sweet, buttery notes.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱115</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/buttersxhotfhc.jpg" alt="Butterscotch" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Butterscotch
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Smooth coffee with sweet, buttery notes.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱115</p>
       <button onclick="addToCart('Butterscotch', 115)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Butterscotch to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -346,15 +514,30 @@
 </div>
 
 <!-- French Vanilla -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frenchh Vanila.jpg" alt="French Vanilla Iced Coffee" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">French Vanilla</h3>
-    <p class="text-gray-600 text-sm mt-2">Classic vanilla sweetness with iced espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱110</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/frenchh Vanila.jpg" alt="French Vanilla Iced Coffee" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      French Vanilla
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Classic vanilla sweetness with iced espresso.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱110</p>
       <button onclick="addToCart('French Vanilla', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add French Vanilla to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -362,52 +545,96 @@
 </div>
 
 <!-- Matchapresso -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/matchapresso.jpg" alt="Matchapresso" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Matchapresso</h3>
-    <p class="text-gray-600 text-sm mt-2">Earthy matcha paired with smooth espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱125</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/matchapresso.jpg" alt="Matchapresso" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Matchapresso
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Earthy matcha paired with smooth espresso.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱125</p>
       <button onclick="addToCart('Matchapresso', 125)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Matchapresso to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Iced Matcha -->
-<div data-category="iced-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/matcha.jpg" alt="Iced Matcha" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Iced Matcha</h3>
-    <p class="text-gray-600 text-sm mt-2">Refreshing green tea latte served over ice.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱120</p>
+<div data-category="iced-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/matcha.jpg" alt="Iced Matcha" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Iced Matcha
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Refreshing green tea latte served over ice.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱120</p>
       <button onclick="addToCart('Iced Matcha', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Iced Matcha to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
-
-  
 
 
 <!-- HOT COFFEE -->
 
 <!-- Black Coffee -->
-<div data-category="hot-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/black coffffeee.jpg" alt="Black Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Black Coffee</h3>
-    <p class="text-gray-600 text-sm mt-1">Bold, rich, and freshly brewed to awaken your senses.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱75</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/black coffffeee.jpg" alt="Black Coffee" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Black Coffee
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Bold, rich, and freshly brewed to awaken your senses.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱75</p>
       <button onclick="addToCart('Black Coffee', 75)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Black Coffee to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -415,15 +642,30 @@
 </div>
 
 <!-- Cappuccino -->
-<div data-category="hot-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/cappucinnooo.jpg" alt="Cappuccino" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Cappuccino</h3>
-    <p class="text-gray-600 text-sm mt-1">Creamy foam topping over a smooth espresso shot.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱95</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/cappucinnooo.jpg" alt="Cappuccino" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Cappuccino
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Creamy foam topping over a smooth espresso shot.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱95</p>
       <button onclick="addToCart('Cappuccino', 95)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Cappuccino to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -431,15 +673,30 @@
 </div>
 
 <!-- Latte -->
-<div data-category="hot-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/lattee hottt.jpg" alt="Latte" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Latte</h3>
-    <p class="text-gray-600 text-sm mt-1">Velvety steamed milk blended with rich espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱95</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/lattee hottt.jpg" alt="Latte" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Latte
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Velvety steamed milk blended with rich espresso.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱95</p>
       <button onclick="addToCart('Latte', 95)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Latte to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -447,15 +704,19 @@
 </div>
 
 <!-- Cheesecakes -->
-<div data-category="hot-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/chesscakes hot.jpg" alt="Cheesecakes Coffee" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Cheesecakes</h3>
-    <p class="text-gray-600 text-sm mt-1">A sweet and creamy coffee treat with cheesecake flavor.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱105</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/chesscakes hot.jpg" alt="Cheesecakes Coffee" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Cheesecakes</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">A sweet and creamy coffee treat with cheesecake flavor.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱105</p>
       <button onclick="addToCart('Cheesecakes', 105)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -463,15 +724,19 @@
 </div>
 
 <!-- Hazelnut Latte -->
-<div data-category="hot-coffee" class="menu-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-  <img src="Coffees/hot hazelnut.jpg" alt="Hazelnut Latte" class="w-full h-48 object-cover">
-  <div class="p-4">
-    <h3 class="text-xl font-bold text-gray-800">Hazelnut Latte</h3>
-    <p class="text-gray-600 text-sm mt-1">Nutty sweetness meets smooth, creamy espresso.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-yellow-600 font-semibold text-lg">₱105</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/hot hazelnut.jpg" alt="Hazelnut Latte" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Hazelnut Latte</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Nutty sweetness meets smooth, creamy espresso.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱105</p>
       <button onclick="addToCart('Hazelnut Latte', 105)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -479,31 +744,40 @@
 </div>
 
 <!-- Caramel Macchiato -->
-<div data-category="hot-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/hot caramel.jpg" alt="Caramel Macchiato" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Caramel Macchiato</h3>
-    <p class="text-gray-600 text-sm mt-2">Espresso layered with caramel and steamed milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱110</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/hot caramel.jpg" alt="Caramel Macchiato" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Caramel Macchiato</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Espresso layered with caramel and steamed milk.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱110</p>
       <button onclick="addToCart('Caramel Macchiato', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Hot Matcha Latte -->
-<div data-category="hot-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/hot matcha.jpg" alt="Hot Matcha Latte" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Hot Matcha Latte</h3>
-    <p class="text-gray-600 text-sm mt-2">Earthy matcha whisked with creamy steamed milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱115</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/hot matcha.jpg" alt="Hot Matcha Latte" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Hot Matcha Latte</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Earthy matcha whisked with creamy steamed milk.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱115</p>
       <button onclick="addToCart('Hot Matcha Latte', 115)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -511,15 +785,19 @@
 </div>
 
 <!-- Spanish Latte -->
-<div data-category="hot-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/hot spanish.jpg" alt="Spanish Latte" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Spanish Latte</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweetened milk and espresso in perfect harmony.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱110</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/hot spanish.jpg" alt="Spanish Latte" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Spanish Latte</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Sweetened milk and espresso in perfect harmony.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱110</p>
       <button onclick="addToCart('Spanish Latte', 110)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -527,52 +805,62 @@
 </div>
 
 <!-- Dark Mocha -->
-<div data-category="hot-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/dark mocha.jpg" alt="Dark Mocha" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Dark Mocha</h3>
-    <p class="text-gray-600 text-sm mt-2">Deep chocolate flavor with a bold espresso kick.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱115</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/dark mocha.jpg" alt="Dark Mocha" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Dark Mocha</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Deep chocolate flavor with a bold espresso kick.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱115</p>
       <button onclick="addToCart('Dark Mocha', 115)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- French Vanilla -->
-<div data-category="hot-coffee" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/hot vanilla.jpg" alt="French Vanilla" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">French Vanilla</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet and creamy vanilla flavor with smooth coffee.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱105</p>
+<div data-category="hot-coffee" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/hot vanilla.jpg" alt="French Vanilla" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">French Vanilla</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Sweet and creamy vanilla flavor with smooth coffee.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱105</p>
       <button onclick="addToCart('French Vanilla', 105)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
-
-
-
 
 <!-- FRAPPES -->
 
 <!-- Whiskey Caramel -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe caramel.jpg" alt="Whiskey Caramel" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Whiskey Caramel</h3>
-    <p class="text-gray-600 text-sm mt-2">Smooth caramel frappe with a hint of whiskey flavor.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱130</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe caramel.jpg" alt="Whiskey Caramel" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Whiskey Caramel</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Smooth caramel frappe with a hint of whiskey flavor.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱130</p>
       <button onclick="addToCart('Whiskey Caramel', 130)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -580,15 +868,19 @@
 </div>
 
 <!-- Caramel Mocha -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe mocha.jpg" alt="Caramel Mocha" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Caramel Mocha</h3>
-    <p class="text-gray-600 text-sm mt-2">Rich mocha blended with buttery caramel sweetness.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱130</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe mocha.jpg" alt="Caramel Mocha" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Caramel Mocha</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Rich mocha blended with buttery caramel sweetness.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱130</p>
       <button onclick="addToCart('Caramel Mocha', 130)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -596,31 +888,40 @@
 </div>
 
 <!-- Vanilla -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe vanilla.jpg" alt="Vanilla Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Vanilla</h3>
-    <p class="text-gray-600 text-sm mt-2">Classic creamy vanilla blended to perfection.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱120</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe vanilla.jpg" alt="Vanilla Frappe" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Vanilla</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Classic creamy vanilla blended to perfection.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱120</p>
       <button onclick="addToCart('Vanilla', 120)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Cookies & Cream -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe cookies.jpg" alt="Cookies & Cream" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Cookies & Cream</h3>
-    <p class="text-gray-600 text-sm mt-2">Crushed cookies swirled into creamy goodness.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱125</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe cookies.jpg" alt="Cookies & Cream" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Cookies & Cream</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Crushed cookies swirled into creamy goodness.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱125</p>
       <button onclick="addToCart('Cookies & Cream', 125)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -628,15 +929,19 @@
 </div>
 
 <!-- Mocha -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe mocha.jpg" alt="Mocha Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Mocha</h3>
-    <p class="text-gray-600 text-sm mt-2">Bold coffee blended with smooth chocolate.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱125</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe mocha.jpg" alt="Mocha Frappe" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Mocha</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Bold coffee blended with smooth chocolate.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱125</p>
       <button onclick="addToCart('Mocha', 125)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
@@ -644,243 +949,444 @@
 </div>
 
 <!-- Java Chips -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe java.jpg" alt="Java Chips" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Java Chips</h3>
-    <p class="text-gray-600 text-sm mt-2">Coffee frappe with crunchy chocolate chips.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱135</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 hover:bg-yellow-50 transition duration-500 transform hover:-translate-y-2">
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe java.jpg" alt="Java Chips" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">Java Chips</h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-2">Coffee frappe with crunchy chocolate chips.</p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-800">₱135</p>
       <button onclick="addToCart('Java Chips', 135)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Dark Chocolate -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe dark.jpg" alt="Dark Chocolate Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Dark Chocolate</h3>
-    <p class="text-gray-600 text-sm mt-2">Intensely rich dark chocolate indulgence.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱135</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe dark.jpg" alt="Dark Chocolate Frappe" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Text -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Dark Chocolate
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Intensely rich dark chocolate indulgence.
+    </p>
+
+    <!-- Price & Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱135</p>
       <button onclick="addToCart('Dark Chocolate', 135)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Dark Chocolate to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Matcha Frappe -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe matcha.jpg" alt="Matcha Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Matcha Frappe</h3>
-    <p class="text-gray-600 text-sm mt-2">Earthy matcha blended with creamy milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱140</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe matcha.jpg" alt="Matcha Frappe" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Matcha Frappe
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Earthy matcha blended with creamy milk.
+    </p>
+
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱140</p>
       <button onclick="addToCart('Matcha Frappe', 140)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Matcha Frappe to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- S'mores -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe smores.jpg" alt="S'mores Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">S'mores</h3>
-    <p class="text-gray-600 text-sm mt-2">Chocolate, marshmallow, and graham cracker bliss.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱140</p>
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe smores.jpg" alt="S'mores Frappe" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      S'mores
+    </h3>
+    <p class="text-gray-600 text-[11px] sm:text-sm mt-1.5">
+      Chocolate, marshmallow, and graham cracker bliss.
+    </p>
+
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱140</p>
       <button onclick="addToCart('S\'mores', 140)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add S'mores to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Black Forest -->
-<div data-category="frappes" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/frappe black.jpg" alt="Black Forest Frappe" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Black Forest</h3>
-    <p class="text-gray-600 text-sm mt-2">Chocolate-cherry blend topped with whipped cream.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱145</p>
-      <button onclick="addToCart('Black Forest', 145)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="frappes" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <img src="Coffees/frappe black.jpg" 
+         alt="Black Forest Frappe with chocolate, cherry, and whipped cream" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <!-- Content -->
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Black Forest
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Chocolate-cherry blend topped with whipped cream.
+    </p>
+
+    <!-- Price + Button -->
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱145</p>
+      <button onclick="addToCart(`Black Forest`, 145)" 
+              aria-label="Add Black Forest to cart"
+              title="Add Black Forest to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
-
-
 
 <!-- MILK TEA -->
 
 <!-- Bubble Tea -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea bubble.jpg" alt="Bubble Tea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Bubble Tea</h3>
-    <p class="text-gray-600 text-sm mt-2">Classic black tea with milk and chewy tapioca pearls.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱75</p>
-      <button onclick="addToCart('Bubble Tea', 75)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea bubble.jpg" 
+         alt="Bubble Tea with milk and chewy tapioca pearls" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Bubble Tea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Classic black tea with milk and chewy tapioca pearls.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱75</p>
+      <button onclick="addToCart(`Bubble Tea`, 75)" 
+              aria-label="Add Bubble Tea to cart"
+              title="Add Bubble Tea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Wintermelon -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea winter.jpg" alt="Wintermelon" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Wintermelon</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet and refreshing wintermelon milk tea blend.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱75</p>
-      <button onclick="addToCart('Wintermelon', 75)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea winter.jpg" 
+         alt="Wintermelon Milk Tea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Wintermelon
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Sweet and refreshing wintermelon milk tea blend.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱75</p>
+      <button onclick="addToCart(`Wintermelon`, 75)" 
+              aria-label="Add Wintermelon to cart"
+              title="Add Wintermelon to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Chocolate Milktea -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea choco.jpg" alt="Chocolate Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Chocolate Milktea</h3>
-    <p class="text-gray-600 text-sm mt-2">Rich cocoa flavor blended with creamy milk tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱80</p>
-      <button onclick="addToCart('Chocolate Milktea', 80)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea choco.jpg" 
+         alt="Chocolate Milk Tea with creamy cocoa blend" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Chocolate Milktea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Rich cocoa flavor blended with creamy milk tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱80</p>
+      <button onclick="addToCart(`Chocolate Milktea`, 80)" 
+              aria-label="Add Chocolate Milktea to cart"
+              title="Add Chocolate Milktea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Banana Milktea -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea banana.jpg" alt="Banana Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Banana Milktea</h3>
-    <p class="text-gray-600 text-sm mt-2">Smooth banana flavor mixed with fresh milk tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱80</p>
-      <button onclick="addToCart('Banana Milktea', 80)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea banana.jpg" 
+         alt="Banana Milktea with smooth banana flavor and fresh milk tea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Banana Milktea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Smooth banana flavor mixed with fresh milk tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱80</p>
+      <button onclick="addToCart(`Banana Milktea`, 80)" 
+              aria-label="Add Banana Milktea to cart"
+              title="Add Banana Milktea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- White Mochoccino -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea white.jpg" alt="White Mochoccino" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">White Mochoccino</h3>
-    <p class="text-gray-600 text-sm mt-2">Creamy white chocolate and coffee-infused milk tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱85</p>
-      <button onclick="addToCart('White Mochoccino', 85)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea white.jpg" 
+         alt="White Mochoccino Milk Tea with creamy white chocolate and coffee flavor" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      White Mochoccino
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Creamy white chocolate and coffee-infused milk tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱85</p>
+      <button onclick="addToCart(`White Mochoccino`, 85)" 
+              aria-label="Add White Mochoccino to cart"
+              title="Add White Mochoccino to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Blueberry -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea berry.jpg" alt="Blueberry Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Blueberry</h3>
-    <p class="text-gray-600 text-sm mt-2">Fruity blueberry sweetness with creamy milk tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱85</p>
-      <button onclick="addToCart('Blueberry Milktea', 85)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea berry.jpg" 
+         alt="Blueberry Milk Tea with fruity sweetness and creamy blend" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Blueberry
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Fruity blueberry sweetness with creamy milk tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱85</p>
+      <button onclick="addToCart(`Blueberry Milktea`, 85)" 
+              aria-label="Add Blueberry Milktea to cart"
+              title="Add Blueberry Milktea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Strawberry -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea straw.jpg" alt="Strawberry Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Strawberry</h3>
-    <p class="text-gray-600 text-sm mt-2">Fresh strawberry flavor with silky milk tea base.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱85</p>
-      <button onclick="addToCart('Strawberry Milktea', 85)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea straw.jpg" 
+         alt="Strawberry Milktea with fresh strawberry flavor and silky milk tea base" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Strawberry
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Fresh strawberry flavor with silky milk tea base.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱85</p>
+      <button onclick="addToCart(`Strawberry Milktea`, 85)" 
+              aria-label="Add Strawberry Milktea to cart"
+              title="Add Strawberry Milktea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Mango -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea mango.jpg" alt="Mango Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Mango</h3>
-    <p class="text-gray-600 text-sm mt-2">Tropical mango sweetness meets creamy milk tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱85</p>
-      <button onclick="addToCart('Mango Milktea', 85)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea mango.jpg" 
+         alt="Mango Milktea with tropical sweetness and creamy milk tea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Mango
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Tropical mango sweetness meets creamy milk tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱85</p>
+      <button onclick="addToCart(`Mango Milktea`, 85)" 
+              aria-label="Add Mango Milktea to cart"
+              title="Add Mango Milktea to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
+
 
 <!-- Green Tea Matcha -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea matcha.jpg" alt="Green Tea Matcha" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Green Tea Matcha</h3>
-    <p class="text-gray-600 text-sm mt-2">Earthy matcha green tea blended with creamy milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱90</p>
-      <button onclick="addToCart('Green Tea Matcha', 90)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea matcha.jpg" 
+         alt="Green Tea Matcha Milk Tea with earthy matcha and creamy milk" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Green Tea Matcha
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Earthy matcha green tea blended with creamy milk.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-semibold text-yellow-700">₱90</p>
+      <button onclick="addToCart(`Green Tea Matcha`, 90)" 
+              aria-label="Add Green Tea Matcha to cart"
+              title="Add Green Tea Matcha to cart"
+              class="bg-yellow-500 text-black font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Okinawa Milktea -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea okinayawa.jpg" alt="Okinawa Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Okinawa Milktea</h3>
-    <p class="text-gray-600 text-sm mt-2">Brown sugar syrup with roasted tea and creamy milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱90</p>
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea okinayawa.jpg" 
+         alt="Okinawa Milktea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Okinawa Milktea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Brown sugar syrup with roasted tea and creamy milk.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱90</p>
       <button onclick="addToCart('Okinawa Milktea', 90)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Okinawa Milktea to cart"
+              title="Add Okinawa Milktea to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -888,36 +1394,59 @@
 </div>
 
 <!-- Brown Sugar Milktea -->
-<div data-category="milk-tea" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/milktea brown.jpg" alt="Brown Sugar Milktea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Brown Sugar Milktea</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet and creamy with rich brown sugar caramel flavor.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱90</p>
+<div data-category="milk-tea" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/milktea brown.jpg" 
+         alt="Brown Sugar Milktea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Brown Sugar Milktea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Sweet and creamy with rich brown sugar caramel flavor.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱90</p>
       <button onclick="addToCart('Brown Sugar Milktea', 90)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Brown Sugar Milktea to cart"
+              title="Add Brown Sugar Milktea to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
-
-
-
 <!-- FIESTA HUT COOLERS -->
 
 <!-- Halo-Halo Regular -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/halo reg.jpg" alt="Halo-Halo Regular" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Halo-Halo Regular</h3>
-    <p class="text-gray-600 text-sm mt-2">Classic mix of shaved ice, sweetened fruits, and milk.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱75</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/halo reg.jpg" 
+         alt="Halo-Halo Regular" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Halo-Halo Regular
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Classic mix of shaved ice, sweetened fruits, and milk.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱75</p>
       <button onclick="addToCart('Halo-Halo Regular', 75)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Halo-Halo Regular to cart"
+              title="Add Halo-Halo Regular to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -925,15 +1454,28 @@
 </div>
 
 <!-- Halo-Halo Special -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/halo special.jpg" alt="Halo-Halo Special" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Halo-Halo Special</h3>
-    <p class="text-gray-600 text-sm mt-2">Loaded with extra toppings and a scoop of ice cream.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱90</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/halo special.jpg" 
+         alt="Halo-Halo Special" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Halo-Halo Special
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Loaded with extra toppings and a scoop of ice cream.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱90</p>
       <button onclick="addToCart('Halo-Halo Special', 90)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Halo-Halo Special to cart"
+              title="Add Halo-Halo Special to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -941,31 +1483,58 @@
 </div>
 
 <!-- Halo-Halo in a Jar -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/halo jar.jpg" alt="Halo-Halo in a Jar" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Halo-Halo in a Jar</h3>
-    <p class="text-gray-600 text-sm mt-2">Trendy jar version, perfect for take-out and gifting.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱95</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/halo jar.jpg" 
+         alt="Halo-Halo in a Jar" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Halo-Halo in a Jar
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Trendy jar version, perfect for take-out and gifting.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱95</p>
       <button onclick="addToCart('Halo-Halo in a Jar', 95)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Halo-Halo in a Jar to cart"
+              title="Add Halo-Halo in a Jar to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Sago't Gulaman -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/sago.jpg" alt="Sago't Gulaman" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Sago't Gulaman</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet tapioca pearls and jelly in caramel syrup.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱60</p>
-      <button onclick="addToCart('Sago\'t Gulaman', 60)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/sago.jpg" 
+         alt="Sago't Gulaman" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Sago't Gulaman
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Sweet tapioca pearls and jelly in caramel syrup.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱60</p>
+      <button onclick="addToCart(`Sago't Gulaman`, 60)" 
+              aria-label="Add Sago't Gulaman to cart"
+              title="Add Sago't Gulaman to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -973,31 +1542,58 @@
 </div>
 
 <!-- Lemonade -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/lemonade.jpg" alt="Lemonade" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Lemonade</h3>
-    <p class="text-gray-600 text-sm mt-2">Freshly squeezed lemons served over ice.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱55</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/lemonade.jpg" 
+         alt="Lemonade" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Lemonade
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Freshly squeezed lemons served over ice.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱55</p>
       <button onclick="addToCart('Lemonade', 55)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Lemonade to cart"
+              title="Add Lemonade to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
   </div>
 </div>
 
+
 <!-- Calamansi Juice -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/camalansi.jpg" alt="Calamansi Juice" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Calamansi Juice</h3>
-    <p class="text-gray-600 text-sm mt-2">Refreshing and tangy local citrus drink.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱50</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/camalansi.jpg" 
+         alt="Calamansi Juice" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Calamansi Juice
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Refreshing and tangy local citrus drink.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱50</p>
       <button onclick="addToCart('Calamansi Juice', 50)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Calamansi Juice to cart"
+              title="Add Calamansi Juice to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -1005,15 +1601,28 @@
 </div>
 
 <!-- Red Iced Tea -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/red.jpg" alt="Red Iced Tea" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Red Iced Tea</h3>
-    <p class="text-gray-600 text-sm mt-2">Sweet and flavorful house-brewed iced tea.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱50</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/red.jpg" 
+         alt="Red Iced Tea" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Red Iced Tea
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Sweet and flavorful house-brewed iced tea.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱50</p>
       <button onclick="addToCart('Red Iced Tea', 50)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Red Iced Tea to cart"
+              title="Add Red Iced Tea to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -1021,15 +1630,28 @@
 </div>
 
 <!-- Ice Candy -->
-<div data-category="coolers" class="menu-item group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-yellow-200">
-  <img src="Coffees/ice candy.jpg" alt="Ice Candy" class="h-[200px] w-full object-cover group-hover:scale-105 transition duration-500">
-  <div class="p-5 text-center">
-    <h3 class="font-bold text-xl text-gray-800 group-hover:text-yellow-600 transition">Ice Candy</h3>
-    <p class="text-gray-600 text-sm mt-2">Flavors: Avocado, Buko, Chocolate, Melon, Strawberry, Ube.</p>
-    <div class="mt-3 flex items-center justify-between">
-      <p class="text-lg font-semibold text-yellow-700">₱12</p>
+<div data-category="coolers" 
+     class="menu-item group bg-white rounded-lg shadow-md border border-yellow-200 overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-500 transform hover:-translate-y-2">
+
+  <div class="overflow-hidden">
+    <img src="Coffees/ice candy.jpg" 
+         alt="Ice Candy" 
+         class="h-[130px] sm:h-[190px] w-full object-cover group-hover:scale-105 transition duration-500">
+  </div>
+
+  <div class="p-2.5 sm:p-4 text-center">
+    <h3 class="font-bold text-sm sm:text-lg text-gray-800 group-hover:text-yellow-600 transition">
+      Ice Candy
+    </h3>
+    <p class="text-gray-600 text-xs sm:text-sm mt-1.5 line-clamp-2">
+      Flavors: Avocado, Buko, Chocolate, Melon, Strawberry, Ube.
+    </p>
+    <div class="mt-2 flex items-center justify-between gap-2">
+      <p class="text-xs sm:text-base font-bold text-yellow-800">₱12</p>
       <button onclick="addToCart('Ice Candy', 12)" 
-              class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition">
+              aria-label="Add Ice Candy to cart"
+              title="Add Ice Candy to cart"
+              class="bg-yellow-500 text-black font-bold w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow hover:bg-yellow-600 hover:scale-110 transition">
         🛒
       </button>
     </div>
@@ -1037,23 +1659,27 @@
 </div>
 
 
-</section>
 
+</section>                                                          
 <style>
-/* Triangle Button Fiesta Style */
+/* 🔺 Responsive Triangle Button */
 .triangle-btn {
   position: relative;
-  width: 130px;
-  height: 70px;
+  width: clamp(80px, 12vw, 130px);     /* responsive width */
+  height: clamp(45px, 6vw, 70px);      /* responsive height */
   clip-path: polygon(50% 100%, 0 0, 100% 0);
   color: white;
   font-weight: 700;
+  font-size: clamp(9px, 1.2vw, 13px); /* responsive text */
+  line-height: 1.1;
+  text-align: center;
+  padding: 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Allow underline below text */
+  flex-direction: column;
   cursor: pointer;
-  border: 6px solid transparent;
+  border: clamp(3px, 0.7vw, 6px) solid transparent;
   background:
     linear-gradient(135deg, rgba(255 255 255 / 0.15) 25%, transparent 25%),
     linear-gradient(225deg, rgba(255 255 255 / 0.15) 25%, transparent 25%),
@@ -1064,34 +1690,37 @@
   transition: background-position 0.4s ease, background-color 0.3s ease;
   text-shadow: 0 0 3px rgba(0,0,0,0.3);
   transform: translateY(-6px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Shadow */
 .triangle-btn::before {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      width: 120px;
-      height: 60px;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
-      background-color: rgba(0,0,0,0.15);
-      z-index: -1;
-      filter: blur(2px);
-      transition: top 0.3s ease, left 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
-    }
+  content: "";
+  position: absolute;
+  top: clamp(3px, 0.5vw, 6px);
+  left: clamp(3px, 0.5vw, 6px);
+  width: calc(100% - clamp(6px, 1vw, 12px));
+  height: calc(100% - clamp(6px, 1vw, 12px));
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background-color: rgba(0,0,0,0.15);
+  z-index: -1;
+  filter: blur(2px);
+  transition: all 0.3s ease;
+}
 
-    .triangle-btn::after {
-      content: "";
-      position: absolute;
-      bottom: 26px;
-      left: 30%;
-      width: 40%;
-      height: 4px;
-      background: white;
-      border-radius: 1px;
-      opacity: 0.4;
-      transition: width 0.3s ease, opacity 0.3s ease;
-    }
-
+/* Underline */
+.triangle-btn::after {
+  content: "";
+  position: absolute;
+  bottom: clamp(14px, 2.5vw, 26px);
+  left: 30%;
+  width: 40%;
+  height: clamp(2px, 0.5vw, 4px);
+  background: white;
+  border-radius: 1px;
+  opacity: 0.4;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
 
 /* Color Variants */
 .red { background-color: #dc2626; border-color: #b91c1c; }
@@ -1110,17 +1739,17 @@
 .orange:hover { background-color: #f97316; }
 .yellow:hover { background-color: #eab308; }
 
-
-  /* Click Pop Animation */
-  @keyframes popEffect {
-    0%   { transform: scale(1) translateY(-6px); }
-    50%  { transform: scale(1.15) translateY(-10px); }
-    100% { transform: scale(1) translateY(-6px); }
-  }
-  .triangle-btn:active {
-    animation: popEffect 0.2s ease;
-  }
+/* Click Pop Animation */
+@keyframes popEffect {
+  0%   { transform: scale(1) translateY(-6px); }
+  50%  { transform: scale(1.15) translateY(-10px); }
+  100% { transform: scale(1) translateY(-6px); }
+}
+.triangle-btn:active {
+  animation: popEffect 0.2s ease;
+}
 </style>
+
 
 <script>
 function filterMenu(category) {
